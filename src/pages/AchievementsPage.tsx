@@ -44,12 +44,8 @@ const AchievementsPage = () => {
                       title: "Presented at International Research Conclave",
                       details: "Showcased UrbanSafeFlow project with live simulations and AI dashboard analytics.",
                       year: "2024"
-                  },
-                  {
-                      title: "Founder - PowerX Pvt. Ltd.",
-                      details: "Launched a startup solving Smart City and Traffic Safety problems through AI, ML, and IoT.",
-                      year: "2024"
                   }
+                  
               ].map((ach, i) => (
                   <motion.li
                       key={i}

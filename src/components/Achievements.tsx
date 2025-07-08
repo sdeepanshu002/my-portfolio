@@ -17,11 +17,7 @@ const achievements = [
     year: "2024",
     description: "Presented UrbanSafeFlow traffic system to global academics."
   },
-  {
-    title: "Founded PowerX Pvt. Ltd.",
-    year: "2024",
-    description: "Launched Smart City startup building AI traffic tech."
-  },
+  
 ];
 
 const cardVariants = {

@@ -59,12 +59,6 @@ const allItems = [
     link: "https://drive.google.com/file/d/1lUKmTjzEd4PvTNcGn2hylc_4i4NZZ9Dl/view"
   },
   {
-    year: "2024",
-    title: "Co-Founder – PowerX Pvt. Ltd.",
-    desc: "Founded startup focused on Smart City and AI-based traffic management solutions.",
-    icon: <FaBuilding className="text-gray-600" />
-  },
-  {
     section: "🎓 Education & Awards"
   },
   {
@@ -81,16 +75,15 @@ const allItems = [
     link: "https://drive.google.com/file/d/1LdBdNc8gUWhXYoWTeB2e7ZcZQy_E6eHE/view"
   },
   {
-    year: "2025",
-    title: "Speaker – International Research Conclave",
-    desc: "Presented UrbanSafeFlow project at Chitkara University’s academic symposium.",
-    icon: <FaMicrophone className="text-red-500" />,
-    link: "https://drive.google.com/file/d/1uVh33TzkHeC1zEDBWD3SzNDXZQ9HbcZJ/view"
+    year: "2022–2025",
+    title: "Winner – Anveshan (University + Zonal)",
+    desc: "Won at university and state level with interdisciplinary projects.",
+    icon: <FaAward className="text-yellow-600" />
   },
   {
     year: "2022–2025",
-    title: "Winner – Anveshan (University + Zonal + National)",
-    desc: "Won at university and state level with interdisciplinary projects. Finalist at national conventions.",
+    title: "Finalist – Anveshan International Convention",
+    desc: "Finalists at International level with interdisciplinary projects.",
     icon: <FaAward className="text-yellow-600" />
   }
 ];

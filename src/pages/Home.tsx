@@ -51,9 +51,9 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
 
       <TypeAnimation
         sequence={[
-          "Driven by Passion, powered by Technology.",
+          "Driven by Passion, powered by Technology",
           2000,
-          "3× Smart India Hackathon Winner.",
+          "3× Smart India Hackathon Winner",
           2000,
           "Developer | Problem Solver | Team Player",
           2000
@@ -98,7 +98,7 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
           built real-time traffic systems, assistive AI tools, and won multiple national hackathons (SIH).
         </p>
         <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-          I co-founded <strong>PowerX Pvt. Ltd.</strong> and enjoy solving real-world problems in AI/IoT and Smart Cities.
+          I was a part of <strong>PowerX Pvt. Ltd.</strong> and enjoy solving real-world problems in AI/IoT and Smart Cities.
         </p>
         
 
@@ -140,7 +140,7 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
       href="/projects"
       className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
     >
-      🚀 View All Projects
+      📜 Read More
     </a>
   </div>
 </section>
