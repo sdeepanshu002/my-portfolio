@@ -10,8 +10,9 @@ import {
   FaAward,
   FaCode
 } from "react-icons/fa";
+import { useState } from "react";
 
-const items = [
+const allItems = [
   {
     section: "🏆 SIH Projects"
   },
@@ -34,7 +35,6 @@ const items = [
     desc: "Built real-time traffic control system using YOLOv9, OpenCV, and WebSocket logic.",
     icon: <FaTrophy className="text-blue-500" />
   },
-
   {
     section: "💼 Work Experience & Projects"
   },
@@ -64,7 +64,6 @@ const items = [
     desc: "Founded startup focused on Smart City and AI-based traffic management solutions.",
     icon: <FaBuilding className="text-gray-600" />
   },
-
   {
     section: "🎓 Education & Awards"
   },
@@ -97,55 +96,75 @@ const items = [
 ];
 
 const Timeline = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleItems = showAll
+    ? allItems
+    : allItems.slice(0, 4); // Show first 3 SIH items + 1 heading
+
   return (
-    <motion.ol
-      className="relative ml-10 border-l-2 border-blue-500 mt-6"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ staggerChildren: 0.2 }}
-    >
-      {items.map((item, i) =>
-        item.section ? (
-          <motion.li
-            key={i}
-            className="text-center text-xl font-bold text-blue-600 py-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-          >
-            {item.section}
-          </motion.li>
-        ) : (
-          <motion.li
-            key={i}
-            className="mb-10 relative pl-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {/* Icon left of the timeline */}
-            <span className="absolute -left-10 top-1 w-8 h-8 flex items-center justify-center bg-white dark:bg-gray-900 border-2 border-blue-500 rounded-full shadow">
-              {item.icon}
-            </span>
+    <>
+      <motion.ol
+        className="relative ml-10 border-l-2 border-blue-500 mt-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.2 }}
+      >
+        {visibleItems.map((item, i) =>
+          item.section ? (
+            <motion.li
+              key={i}
+              className="text-center text-xl font-bold text-blue-600 py-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+            >
+              {item.section}
+            </motion.li>
+          ) : (
+            <motion.li
+              key={i}
+              className="mb-10 relative pl-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="absolute -left-10 top-1 w-8 h-8 flex items-center justify-center bg-white dark:bg-gray-900 border-2 border-blue-500 rounded-full shadow">
+                {item.icon}
+              </span>
 
-            <time className="text-sm font-semibold text-gray-700 dark:text-gray-300 block mb-1">{item.year}</time>
-            <h3 className="text-lg font-bold text-blue-600">{item.title}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
+              <time className="text-sm font-semibold text-gray-700 dark:text-gray-300 block mb-1">
+                {item.year}
+              </time>
+              <h3 className="text-lg font-bold text-blue-600">{item.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{item.desc}</p>
 
-            {item.link && (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-2 text-sm text-blue-600 hover:underline hover:text-blue-800 transition"
-              >
-                🔗 View Proof
-              </a>
-            )}
-          </motion.li>
-        )
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-sm text-blue-600 hover:underline hover:text-blue-800 transition"
+                >
+                  🔗 View Proof
+                </a>
+              )}
+            </motion.li>
+          )
+        )}
+      </motion.ol>
+
+      {!showAll && (
+        <div className="text-center mt-6">
+          <button
+            onClick={() => setShowAll(true)}
+            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+          >
+            ⬇️ View More
+          </button>
+        </div>
       )}
-    </motion.ol>
+    </>
   );
 };
 
