@@ -21,9 +21,7 @@ const About = () => (
       <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
         I was part of <strong>PowerX Pvt. Ltd.</strong> and enjoy solving real-world problems in different domains.
       </p>
-      <div className="mt-10">
-        <Skills />
-      </div>
+      
       <div className="mt-12">
         <h3 className="text-2xl font-bold text-blue-600 mb-2">Experience Timeline</h3>
         

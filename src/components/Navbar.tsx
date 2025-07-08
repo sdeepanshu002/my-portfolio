@@ -43,7 +43,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 items-center">
-          {["home", "about", "skills", "achievements", "projects", "contact"].map((id) => (
+          {["home", "about", "skills", "projects","timeline" , "achievements", "contact"].map((id) => (
             <button
               key={id}
               onClick={() => handleNavClick(id)}
@@ -83,7 +83,7 @@ const Navbar = () => {
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-gray-950">
-          {["home", "about", "skills", "achievements", "projects", "contact"].map((id) => (
+          {["home", "about", "skills", "projects", "timeline", "achievements", "contact"].map((id) => (
             <button
               key={id}
               onClick={() => handleNavClick(id)}

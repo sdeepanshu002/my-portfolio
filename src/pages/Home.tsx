@@ -79,19 +79,8 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
         </p>
         
 
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold text-blue-600 mb-2">Experience Timeline</h3>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Timeline />
-          </motion.div>
-        </div>
+        
       </section>
-
 
 {/* Skills Section */}
 <section id="skills" className="max-w-5xl mx-auto py-12 px-4 relative z-10">
@@ -114,26 +103,6 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
   </motion.div>
 </section>
 
-
-{/* Achievements Section */}
-<section id="achievements" className="max-w-5xl mx-auto py-12 px-4 relative z-10">
-  <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Achievements</h2>
-  <Achievements />
-
-  <div className="mt-8 text-center">
-    <a
-      href="/achievements"
-      className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
-    >
-      📜 Read More
-    </a>
-  </div>
-</section>
-
-
-
-
-
 {/* Projects Section */}
       <section id="projects" className="max-w-5xl mx-auto py-12 px-4 relative z-10">
   <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Projects</h2>
@@ -152,6 +121,40 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
     </a>
   </div>
 </section>
+
+
+{/* Timeline Section */}
+      <section id="timeline" className="max-w-3xl mx-auto p-4 relative z-10">
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-blue-600 mb-2">Experience Timeline</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Timeline />
+          </motion.div>
+        </div>
+      </section>
+
+
+{/* Achievements Section */}
+<section id="achievements" className="max-w-5xl mx-auto py-12 px-4 relative z-10">
+  <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Achievements</h2>
+  <Achievements />
+
+  <div className="mt-8 text-center">
+    <a
+      href="/achievements"
+      className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+    >
+      📜 Read More
+    </a>
+  </div>
+</section>
+
+
 
 
 
