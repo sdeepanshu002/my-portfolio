@@ -134,15 +134,26 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
 
 
 
-      {/* Projects Section */}
+{/* Projects Section */}
       <section id="projects" className="max-w-5xl mx-auto py-12 px-4 relative z-10">
-        <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProjectCard title="UrbanSafeFlow" description="AI-based adaptive traffic control system deployed for Smart City." link="#" />
-          <ProjectCard title="Smart Wheelchair" description="Voice and tongue-controlled AI wheelchair using ML & IoT." link="#" />
-          <ProjectCard title="Drone Surveillance" description="Real-time drone patrol with automated incident reporting." link="#" />
-        </div>
-      </section>
+  <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Projects</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <ProjectCard title="UrbanSafeFlow" description="AI-based adaptive traffic control system deployed for Smart City." link="#" />
+    <ProjectCard title="Smart Wheelchair" description="Voice and tongue-controlled AI wheelchair using ML & IoT." link="#" />
+    <ProjectCard title="Drone Surveillance" description="Real-time drone patrol with automated incident reporting." link="#" />
+  </div>
+
+  <div className="mt-8 text-center">
+    <a
+      href="/projects"
+      className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+    >
+      🚀 View All Projects
+    </a>
+  </div>
+</section>
+
+
 
       {/* Contact Section */}
 <section id="contact" className="max-w-xl mx-auto py-12 relative z-10">

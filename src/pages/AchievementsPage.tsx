@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 
 const AchievementsPage = () => {
+    const navigate = useNavigate();
   return (
     <><main className="max-w-4xl mx-auto px-4 py-12 text-gray-800 dark:text-gray-200">
           <motion.h1
@@ -63,14 +65,12 @@ const AchievementsPage = () => {
                   </motion.li>
               ))}
           </motion.ul>
-          <div className="mt-8 text-center">
-              <a
-                  href="/"
-                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
-              >
-                  Go Back
-              </a>
-          </div>
+          <button
+        onClick={() => navigate(-1)}
+        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+      >
+        ⬅️ Go Back
+      </button>
       </main><Footer /></>
 
   );
