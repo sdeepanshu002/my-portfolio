@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    return localStorage.getItem("theme") === "dark" || window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return localStorage.getItem("theme") === "dark" ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const handleNavClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false); // close mobile menu
     if (location.pathname !== "/") {
       navigate("/", { replace: false });
-      // Wait for page to load then scroll
       setTimeout(() => {
         const el = document.getElementById(sectionId);
         el?.scrollIntoView({ behavior: "smooth" });
@@ -30,26 +32,68 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <nav className="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-950 text-gray-800 dark:text-white shadow-md sticky top-0 z-50">
-      <div className="text-2xl font-bold text-blue-500 cursor-pointer" onClick={() => handleNavClick("home")}>
-        Deepanshu
-      </div>
-      <div className="flex items-center gap-6">
-        <button onClick={() => handleNavClick("home")} className="hover:text-blue-500 transition">Home</button>
-        <button onClick={() => handleNavClick("about")} className="hover:text-blue-500 transition">About</button>
-        <button onClick={() => handleNavClick("skills")} className="hover:text-blue-500 transition">Skills</button>
-        <button onClick={() => handleNavClick("achievements")} className="hover:text-blue-500 transition">Achievements</button>
-        <button onClick={() => handleNavClick("projects")} className="hover:text-blue-500 transition">Projects</button>
-        <button onClick={() => handleNavClick("contact")} className="hover:text-blue-500 transition">Contact</button>
-
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="ml-4 p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition"
-          aria-label="Toggle Theme"
+    <nav className="bg-white dark:bg-gray-950 text-gray-800 dark:text-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div
+          className="text-2xl font-bold text-blue-500 cursor-pointer"
+          onClick={() => handleNavClick("home")}
         >
-          {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-        </button>
+          Deepanshu
+        </div>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex gap-6 items-center">
+          {["home", "about", "skills", "achievements", "projects", "contact"].map((id) => (
+            <button
+              key={id}
+              onClick={() => handleNavClick(id)}
+              className="hover:text-blue-500 transition"
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </button>
+          ))}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+            aria-label="Toggle Theme"
+          >
+            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-4">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+            aria-label="Toggle Theme"
+          >
+            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Nav */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-gray-950">
+          {["home", "about", "skills", "achievements", "projects", "contact"].map((id) => (
+            <button
+              key={id}
+              onClick={() => handleNavClick(id)}
+              className="block w-full text-left py-2 px-2 rounded hover:bg-blue-100 dark:hover:bg-gray-800 transition"
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
