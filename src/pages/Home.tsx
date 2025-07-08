@@ -31,40 +31,63 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
       <AnimatedBackground />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 text-center relative z-10">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-          Hi, I'm <span className="text-blue-400">Deepanshu Sharma</span>
-        </h1>
+      <section id="home" className="min-h-screen flex flex-col justify-center px-4 text-center md:text-left relative z-10">
+  <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
+    
+    {/* 👤 Image Section */}
+    <div className="flex-shrink-0">
+      <img
+        src="/photo.jpg" // ⬅️ Replace with your actual image path in /public
+        alt="Deepanshu Sharma"
+        className="w-48 h-48 rounded-full object-cover border-4 border-blue-500 shadow-lg"
+      />
+    </div>
 
-        <TypeAnimation
-          sequence={["Driven by Passion, powered by Technology.", 2000, "3 times Smart India Hackathon Winner.", 2000, "Developer | Problem Solver | Team Player", 2000]}
-          wrapper="span"
-          speed={50}
-          repeat={Infinity}
-          className="text-lg md:text-xl text-gray-300"
-        />
+    {/* 👋 Text Section */}
+    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+      <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+        Hi, I'm <span className="text-blue-400">Deepanshu Sharma</span>
+      </h1>
 
-        <div className="mt-8">
-          <SocialLinks />
-        </div>
+      <TypeAnimation
+        sequence={[
+          "Driven by Passion, powered by Technology.",
+          2000,
+          "3× Smart India Hackathon Winner.",
+          2000,
+          "Developer | Problem Solver | Team Player",
+          2000
+        ]}
+        wrapper="span"
+        speed={50}
+        repeat={Infinity}
+        className="text-lg md:text-xl text-gray-300"
+      />
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl text-lg hover:bg-gray-200 transition"
-          >
-            📄 Download Resume
-          </a>
-        </div>
+      <div className="mt-6">
+        <SocialLinks />
+      </div>
 
-        <div className="mt-20 animate-bounce">
-          <svg className="w-6 h-6 mx-auto text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-          <p className="text-sm text-gray-400 mt-2">Scroll down to explore more</p>
-        </div>
-      </section>
+      <div className="mt-6">
+        <a
+          href="/resume.pdf"
+          className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl text-lg hover:bg-gray-200 transition"
+        >
+          📄 Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {/* ⬇️ Scroll prompt */}
+  <div className="mt-20 animate-bounce text-center">
+    <svg className="w-6 h-6 mx-auto text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+    <p className="text-sm text-gray-400 mt-2">Scroll down to explore more</p>
+  </div>
+</section>
+
 
       {/* About Section */}
       <section id="about" className="max-w-3xl mx-auto p-4 relative z-10">
