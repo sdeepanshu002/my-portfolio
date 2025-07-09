@@ -11,6 +11,7 @@ import { useState } from "react";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import Footer from "../components/Footer";
+import About from "./About";
 
 
 
@@ -91,15 +92,7 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
 
       {/* About Section */}
       <section id="about" className="max-w-3xl mx-auto p-4 relative z-10">
-        <h2 className="text-3xl font-bold text-blue-600 mb-4">About Me</h2>
-        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          I'm <strong>Deepanshu Sharma</strong>, a Computer Science graduate focused on
-          building intelligent systems using Python, OpenCV, and modern web technologies. I've
-          built real-time traffic systems, assistive AI tools, and won multiple national hackathons (SIH).
-        </p>
-        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-          I was a part of <strong>PowerX Pvt. Ltd.</strong> and enjoy solving real-world problems in AI/IoT and Smart Cities.
-        </p>
+       <About/>
         
 
         
@@ -130,9 +123,9 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
       <section id="projects" className="max-w-5xl mx-auto py-12 px-4 relative z-10">
   <h2 className="text-3xl font-bold text-blue-600 mb-8 text-center">Projects</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <ProjectCard title="UrbanSafeFlow" description="AI-based adaptive traffic control system deployed for Smart City." link="#" />
-    <ProjectCard title="Smart Wheelchair" description="Voice and tongue-controlled AI wheelchair using ML & IoT." link="#" />
-    <ProjectCard title="Drone Surveillance" description="Real-time drone patrol with automated incident reporting." link="#" />
+    <ProjectCard title="UrbanSafeFlow" description="AI-based adaptive traffic control system for Smart City." link="#" />
+    <ProjectCard title="Smart Wheelchair" description="Tongue-controlled AI wheelchair using ML & IoT." link="#" />
+    <ProjectCard title="Drone Surveillance" description="Real-time drone surveillance with automated incident reporting." link="#" />
   </div>
 
   <div className="mt-8 text-center">

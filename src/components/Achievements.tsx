@@ -5,16 +5,16 @@ const achievements = [
   {
     title: "3x Smart India Hackathon Winner",
     year: "2022, 2023, 2024",
-    description: "Won national-level hackathons with AI & Smart City solutions."
+    description: "Won national-level hackathons with AI & real life solutions."
   },
   {
     title: "₹2.5 Lakh Govt Grant",
     year: "2023",
-    description: "Received innovation funding for AI-powered assistive wheelchair."
+    description: "Received innovation grant for Tongue-Operated assistive wheelchair."
   },
   {
-    title: "International Research Conclave",
-    year: "2024",
+    title: "International Research Conventions",
+    year: "2022, 2023, 2024, 2025",
     description: "Presented UrbanSafeFlow traffic system to global academics."
   },
   

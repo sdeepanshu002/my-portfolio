@@ -9,11 +9,12 @@ const Navbar = () => {
   });
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const handleNavClick = (sectionId: string) => {
-    setIsMobileMenuOpen(false); // close mobile menu
+    setIsMobileMenuOpen(false);
     if (location.pathname !== "/") {
       navigate("/", { replace: false });
       setTimeout(() => {
@@ -31,8 +32,22 @@ const Navbar = () => {
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-white dark:bg-gray-950 text-gray-800 dark:text-white shadow-md sticky top-0 z-50">
+    <nav
+      className={`sticky top-0 z-50 shadow-md transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/70 dark:bg-gray-950/70 backdrop-blur-md"
+          : "bg-white dark:bg-gray-950"
+      } text-gray-800 dark:text-white`}
+    >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <div
           className="text-2xl font-bold text-blue-500 cursor-pointer"
@@ -43,7 +58,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 items-center">
-          {["home", "about", "skills", "projects","timeline" , "achievements", "contact"].map((id) => (
+          {["home", "about", "skills", "projects", "timeline", "achievements", "contact"].map((id) => (
             <button
               key={id}
               onClick={() => handleNavClick(id)}
