@@ -95,13 +95,17 @@ const ProjectsPage = () => {
           ))}
         </motion.div>
 
-        <button
-        onClick={() => navigate(-1)}
-        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-      >
-        ⬅️ Go Back
-      </button>
+        
       </main>
+      {/* Go Back Button */}
+      <div className="mt-12 flex justify-center">
+        <button
+          onClick={() => navigate("/")}
+          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+        >
+          ⬅️ Go Back
+        </button>
+      </div>
       <Footer />
     </>
   );

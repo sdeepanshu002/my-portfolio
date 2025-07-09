@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const AchievementsPage = () => {
   const navigate = useNavigate();
+
   return (
     <>
       <main className="max-w-4xl mx-auto px-4 py-12 text-gray-800 dark:text-gray-200">
@@ -43,8 +44,8 @@ const AchievementsPage = () => {
                 "Received ₹2.5 lakh funding from the Department of Science & Technology, Government of India, for an AI-powered assistive wheelchair. The system integrates voice and tongue controls with OpenCV-based obstacle detection, and supports fall detection and autonomous navigation in constrained indoor spaces.",
             },
             {
-              title: "🌍 Anveshan Research Convention ",
-              year: "(2022-25) ",
+              title: "🌍 Anveshan Research Convention",
+              year: "(2022–2025)",
               details:
                 "Presented different solutions at the International Research Convention organized by AIU (Association of Indian Universities). Demonstrated live simulations using adaptive traffic control, multi-camera integration, and real-time analytics dashboard. The project was appreciated for urban scalability and AI-driven decision-making.",
             },
@@ -80,12 +81,22 @@ const AchievementsPage = () => {
           ))}
         </motion.ul>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          
+
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/")}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
           >
             ⬅️ Go Back
+          </button>
+
+
+          <button
+            onClick={() => navigate("/certificates")}
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition"
+          >
+            📄 View Certificates
           </button>
         </div>
       </main>
