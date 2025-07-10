@@ -71,7 +71,7 @@ const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("
 
       <div className="mt-6">
         <a
-          href="/resume.pdf"
+          href="/resume.pdf?v=2"
           className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl text-lg hover:bg-gray-200 transition"
         >
           📄 Download Resume
