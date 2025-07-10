@@ -13,9 +13,7 @@ import {
 import { useState } from "react";
 
 const allItems = [
-  {
-    section: "🏆 SIH Projects"
-  },
+  { section: "🏆 SIH Projects" },
   {
     year: "2022",
     title: "SIH Winner – Tongue Operated Wheelchair",
@@ -35,9 +33,7 @@ const allItems = [
     desc: "Built real-time traffic control system using YOLOv9, OpenCV, and WebSocket logic.",
     icon: <FaTrophy className="text-blue-500" />
   },
-  {
-    section: "💼 Work Experience & Projects"
-  },
+  { section: "💼 Work Experience & Projects" },
   {
     year: "2022–2023",
     title: "Alexa Skill Developer – Snovel Creations Pvt. Ltd.",
@@ -58,9 +54,7 @@ const allItems = [
     icon: <FaLaptopCode className="text-orange-600" />,
     link: "https://drive.google.com/file/d/1lUKmTjzEd4PvTNcGn2hylc_4i4NZZ9Dl/view"
   },
-  {
-    section: "🎓 Education & Awards"
-  },
+  { section: "🎓 Education & Awards" },
   {
     year: "2022–2025",
     title: "B.Tech in CSE – MGM University",
@@ -91,9 +85,7 @@ const allItems = [
 const Timeline = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const visibleItems = showAll
-    ? allItems
-    : allItems.slice(0, 4); // Show first 3 SIH items + 1 heading
+  const visibleItems = showAll ? allItems : allItems.slice(0, 4); // First 3 projects + 1 heading
 
   return (
     <>
@@ -147,16 +139,14 @@ const Timeline = () => {
         )}
       </motion.ol>
 
-      {!showAll && (
-        <div className="text-center mt-6">
-          <button
-            onClick={() => setShowAll(true)}
-            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
-          >
-            ⬇️ View More
-          </button>
-        </div>
-      )}
+      <div className="text-center mt-6">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+        >
+          {showAll ? "⬆️ View Less" : "⬇️ View More"}
+        </button>
+      </div>
     </>
   );
 };
