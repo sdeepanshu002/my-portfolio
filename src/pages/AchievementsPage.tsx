@@ -93,10 +93,10 @@ const AchievementsPage = () => {
 
 
           <button
-            onClick={() => navigate("/certificates")}
+            onClick={() => navigate("/gallery")}
             className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition"
           >
-            📄 View Certificates
+            📄 View Gallery
           </button>
         </div>
       </main>

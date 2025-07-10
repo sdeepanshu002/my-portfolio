@@ -14,18 +14,25 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleNavClick = (sectionId: string) => {
-    setIsMobileMenuOpen(false);
-    if (location.pathname !== "/") {
-      navigate("/", { replace: false });
-      setTimeout(() => {
-        const el = document.getElementById(sectionId);
-        el?.scrollIntoView({ behavior: "smooth" });
-      }, 200);
-    } else {
+  setIsMobileMenuOpen(false);
+  
+  if (sectionId === "gallery") {
+    navigate("/gallery");
+    return;
+  }
+
+  if (location.pathname !== "/") {
+    navigate("/", { replace: false });
+    setTimeout(() => {
       const el = document.getElementById(sectionId);
       el?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    }, 200);
+  } else {
+    const el = document.getElementById(sectionId);
+    el?.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
@@ -58,7 +65,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 items-center">
-          {["home", "about", "skills", "projects", "timeline", "achievements", "contact"].map((id) => (
+          {["home", "about", "skills", "projects", "timeline", "achievements", "gallery", "contact"].map((id) => (
             <button
               key={id}
               onClick={() => handleNavClick(id)}
@@ -98,7 +105,7 @@ const Navbar = () => {
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-gray-950">
-          {["home", "about", "skills", "projects", "timeline", "achievements", "contact"].map((id) => (
+          {["home", "about", "skills", "projects", "timeline", "achievements", "gallery", "contact"].map((id) => (
             <button
               key={id}
               onClick={() => handleNavClick(id)}

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import ScrollProgress from "./components/ScrollProgress";
 import ProjectsPage from "./pages/ProjectsPage";
 import Resume from "./pages/Resume"; // 👈 import
-import CertificatesPage from "./pages/CertificatesPage";
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/resume" element={<Resume />} />
-        <Route path="/certificates" element={<CertificatesPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </>
   );
