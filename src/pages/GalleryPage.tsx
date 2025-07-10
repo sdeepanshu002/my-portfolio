@@ -103,7 +103,7 @@ const GalleryPage = () => {
       {/* Go Back Button */}
       <div className="mt-12 flex justify-center">
         <button
-          onClick={() => navigate("/achievements")}
+          onClick={() => navigate("/")}
           className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
         >
           ⬅️ Go Back
