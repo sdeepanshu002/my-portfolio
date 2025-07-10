@@ -6,7 +6,7 @@ const SocialLinks = () => {
       <a href="https://github.com/sdeepanshu002" target="_blank" rel="noreferrer" className="hover:text-blue-600">💻 GitHub</a>
       <a href="mailto:sdeepanshu002@gmail.com" className="hover:text-blue-600">✉️ Email</a>
       <a href="https://linktr.ee/sdeepanshu002" target="_blank" rel="noreferrer" className="hover:text-blue-600">🌐 LinkTree</a>
-      <a href="/resume1.pdf" className="hover:text-purple-600">📄 View Resume</a>
+      <a href="/resume" className="hover:text-purple-600">📄 View Resume</a>
     </div>
   );
 };

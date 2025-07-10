@@ -9,7 +9,7 @@ const Resume = () => {
 
       <div className="w-full max-w-4xl h-[90vh] shadow-lg border rounded overflow-hidden mb-6">
         <iframe
-          src="/resume.pdf"
+          src="/resume1.pdf"
           title="Resume"
           className="w-full h-full"
           style={{ border: "none" }}
